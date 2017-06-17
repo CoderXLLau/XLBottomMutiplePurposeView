@@ -18,7 +18,7 @@
 		537CF6F31D45D536005FE41A /* XLBottomMultiPurposeViewCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 537CF6EB1D45D536005FE41A /* XLBottomMultiPurposeViewCollectionCell.m */; };
 		537CF6F41D45D536005FE41A /* XLBottomMultiPurposeViewCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 537CF6EC1D45D536005FE41A /* XLBottomMultiPurposeViewCollectionCell.xib */; };
 		537CF6F51D45D536005FE41A /* XLBottomMultiPurposeViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 537CF6EE1D45D536005FE41A /* XLBottomMultiPurposeViewItem.m */; };
-		537CF6F91D45D706005FE41A /* UIView+XLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 537CF6F81D45D706005FE41A /* UIView+XLExtension.m */; };
+		7681E7961EF5249A009D159F /* UIView+BMPExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 7681E7951EF5249A009D159F /* UIView+BMPExtension.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,8 +40,8 @@
 		537CF6EC1D45D536005FE41A /* XLBottomMultiPurposeViewCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = XLBottomMultiPurposeViewCollectionCell.xib; sourceTree = "<group>"; };
 		537CF6ED1D45D536005FE41A /* XLBottomMultiPurposeViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLBottomMultiPurposeViewItem.h; sourceTree = "<group>"; };
 		537CF6EE1D45D536005FE41A /* XLBottomMultiPurposeViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLBottomMultiPurposeViewItem.m; sourceTree = "<group>"; };
-		537CF6F71D45D706005FE41A /* UIView+XLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+XLExtension.h"; sourceTree = "<group>"; };
-		537CF6F81D45D706005FE41A /* UIView+XLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+XLExtension.m"; sourceTree = "<group>"; };
+		7681E7941EF5249A009D159F /* UIView+BMPExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BMPExtension.h"; sourceTree = "<group>"; };
+		7681E7951EF5249A009D159F /* UIView+BMPExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BMPExtension.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +107,8 @@
 				537CF6EC1D45D536005FE41A /* XLBottomMultiPurposeViewCollectionCell.xib */,
 				537CF6ED1D45D536005FE41A /* XLBottomMultiPurposeViewItem.h */,
 				537CF6EE1D45D536005FE41A /* XLBottomMultiPurposeViewItem.m */,
-				537CF6F71D45D706005FE41A /* UIView+XLExtension.h */,
-				537CF6F81D45D706005FE41A /* UIView+XLExtension.m */,
+				7681E7941EF5249A009D159F /* UIView+BMPExtension.h */,
+				7681E7951EF5249A009D159F /* UIView+BMPExtension.m */,
 			);
 			path = "XLBottomMultiPurposeView(底部多功能组件)";
 			sourceTree = "<group>";
@@ -186,10 +186,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7681E7961EF5249A009D159F /* UIView+BMPExtension.m in Sources */,
 				537CF6D71D45D51D005FE41A /* ViewController.m in Sources */,
 				537CF6F51D45D536005FE41A /* XLBottomMultiPurposeViewItem.m in Sources */,
 				537CF6D41D45D51D005FE41A /* AppDelegate.m in Sources */,
-				537CF6F91D45D706005FE41A /* UIView+XLExtension.m in Sources */,
 				537CF6F11D45D536005FE41A /* XLBottomMultiPurposeView.m in Sources */,
 				537CF6D11D45D51D005FE41A /* main.m in Sources */,
 				537CF6F31D45D536005FE41A /* XLBottomMultiPurposeViewCollectionCell.m in Sources */,
@@ -341,6 +341,7 @@
 				537CF6E51D45D51D005FE41A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

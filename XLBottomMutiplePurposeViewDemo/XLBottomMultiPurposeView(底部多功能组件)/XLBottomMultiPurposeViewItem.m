@@ -10,14 +10,9 @@
 
 @implementation XLBottomMultiPurposeViewItem
 
-- (instancetype)initWithDict:(NSDictionary *)dict
++ (instancetype)itemWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title
 {
-    if (self = [super init]) {
-        self.title = dict[@"title"];
-        self.image = dict[@"image"];
-        self.highImage = dict[@"highImage"];
-    }
-    return self;
+    return [[self alloc] initWithImage:image highImage:highImage title:title];
 }
 
 - (instancetype)initWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title;
@@ -33,6 +28,16 @@
 + (instancetype)itemWithDict:(NSDictionary *)dict
 {
     return [[self alloc] initWithDict:dict];
+}
+
+- (instancetype)initWithDict:(NSDictionary *)dict
+{
+    if (self = [super init]) {
+        self.title = dict[@"title"];
+        self.image = dict[@"image"];
+        self.highImage = dict[@"highImage"];
+    }
+    return self;
 }
 
 @end
