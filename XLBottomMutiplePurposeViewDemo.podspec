@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-    s.name         = 'XLBottomMultiPurposeView'
+    s.name         = 'XLBottomMutiplePurposeViewDemo'
     s.version      = '1.0.0'
     s.summary      = 'A simple module like SinaWeibo bottom share view!'
     s.homepage     = 'https://github.com/CoderXLLau/XLBottomMutiplePurposeView'
