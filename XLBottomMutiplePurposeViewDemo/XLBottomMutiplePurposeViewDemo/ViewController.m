@@ -47,6 +47,7 @@
         [bottomItems addObject:item];
 
     }
+    
     // 展示组件
     [XLBottomMultiPurposeView showBottomMultiPurposeViewWithTopItems:topItems bottomItems:bottomItems delegate:self topTitleLabelText:@"分享到"];
 }

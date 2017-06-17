@@ -170,6 +170,16 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
 + (void)showBottomMultiPurposeViewWithTopItems:(NSArray <XLBottomMultiPurposeViewItem *> *)topItems bottomItems:(NSArray <XLBottomMultiPurposeViewItem *> *)bottomItems delegate:(id <XLBottomMultiPurposeViewDelegate>)delegate topTitleLabelText:(NSString *)title
 {
     XLBottomMultiPurposeView *view = [self xl_viewFromXib];
+    for (id obj in topItems) {
+        if (![obj isKindOfClass:[XLBottomMultiPurposeViewItem class]]) {
+            return;
+        }
+    }
+    for (id obj in bottomItems) {
+        if (![obj isKindOfClass:[XLBottomMultiPurposeViewItem class]]) {
+            return;
+        }
+    }
     [view showBottomMultiPurposeViewWithTopItems:topItems bottomItems:bottomItems delegate:delegate topTitleLabelText:title];
 }
 
