@@ -144,7 +144,7 @@
 				TargetAttributes = {
 					537CF6CB1D45D51D005FE41A = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 69BL545R49;
+						DevelopmentTeam = QC83AGNAJ7;
 					};
 				};
 			};
@@ -304,9 +304,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QC83AGNAJ7;
 				INFOPLIST_FILE = XLBottomMutiplePurposeViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tohoapp.XLBottomMutiplePurposeViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shannoon.XLBottomMutiplePurposeViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -315,9 +317,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = QC83AGNAJ7;
 				INFOPLIST_FILE = XLBottomMutiplePurposeViewDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.tohoapp.XLBottomMutiplePurposeViewDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shannoon.XLBottomMutiplePurposeViewDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -341,6 +345,7 @@
 				537CF6E51D45D51D005FE41A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
