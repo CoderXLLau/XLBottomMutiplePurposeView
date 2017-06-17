@@ -1,15 +1,15 @@
 //
-//  UIView+XLExtension.m
-//  TopHot
+//  UIView+BMPExtension.m
+//  XLBottomMutiplePurposeViewDemo
 //
-//  Created by Liushannoon on 16/4/20.
-//  Copyright © 2016年 Liushannoon. All rights reserved.
+//  Created by XL on 2017/6/17.
+//  Copyright © 2017年 LiuShannoon. All rights reserved.
 //
 
-#import "UIView+XLExtension.h"
+#import "UIView+BMPExtension.h"
 #import <objc/runtime.h>
 
-@implementation UIView (XLExtension)
+@implementation UIView (BMPExtension)
 
 #pragma mark    -   计算frame
 

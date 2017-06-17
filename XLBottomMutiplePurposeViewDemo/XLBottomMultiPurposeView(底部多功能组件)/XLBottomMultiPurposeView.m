@@ -46,11 +46,11 @@
 /**
  *  顶部数据源
  */
-@property (nonatomic , strong) NSMutableArray *topDatas;
+@property (nonatomic , strong) NSArray *topItems;
 /**
  *  底部数据源
  */
-@property (nonatomic , strong) NSMutableArray *bottomDatas;
+@property (nonatomic , strong) NSArray *bottomItems;
 
 
 @end
@@ -64,31 +64,32 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
 
 @implementation XLBottomMultiPurposeView
 
-/**
- * 懒加载
- */
-- (NSMutableArray *)topDatas
-{
-    if (_topDatas == nil) {
-        _topDatas = [NSMutableArray array];
-    }
-    
-    return _topDatas;
-}
-/**
- * 懒加载
- */
-- (NSMutableArray *)bottomDatas
-{
-    if (_bottomDatas == nil) {
-        _bottomDatas = [NSMutableArray array];
-    }
-    
-    return _bottomDatas;
-}
+///**
+// * 懒加载
+// */
+//- (NSMutableArray *)topItems
+//{
+//    if (_topItems == nil) {
+//        _topItems = [NSMutableArray array];
+//    }
+//    
+//    return _topItems;
+//}
+///**
+// * 懒加载
+// */
+//- (NSMutableArray *)bottomItems
+//{
+//    if (_bottomItems == nil) {
+//        _bottomItems = [NSMutableArray array];
+//    }
+//    
+//    return _bottomItems;
+//}
 
 - (void)awakeFromNib
 {
+    [super awakeFromNib];
     [self initial];
 }
 
@@ -109,7 +110,7 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
     UICollectionViewFlowLayout *layout  = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     CGFloat xmargin = 15;
-    layout.itemSize = CGSizeMake((XLScreenW - 6 * xmargin) / 5, self.topCollectionView.height);
+    layout.itemSize = CGSizeMake((XLScreenW - 6 * xmargin) / 5, self.topCollectionView.xl_height);
 //    layout.minimumInteritemSpacing = 15;
     layout.sectionInset = UIEdgeInsetsMake(0, xmargin, 0, xmargin);
     layout.minimumLineSpacing = xmargin;
@@ -124,7 +125,7 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
     // 流水布局对象,设置cell的尺寸和位置
     UICollectionViewFlowLayout *layoutBottom  = [[UICollectionViewFlowLayout alloc] init];
     layoutBottom.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    layoutBottom.itemSize = CGSizeMake((XLScreenW - 6 * xmargin) / 5, self.topCollectionView.height);
+    layoutBottom.itemSize = CGSizeMake((XLScreenW - 6 * xmargin) / 5, self.topCollectionView.xl_height);
     //    layout.minimumInteritemSpacing = 15;
     layoutBottom.sectionInset = UIEdgeInsetsMake(0, xmargin, 0, xmargin);
     layoutBottom.minimumLineSpacing = xmargin;
@@ -156,7 +157,7 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
  */
 - (void)removeSelfFromSuperView
 {
-    self.baseViewBottomConstraint.constant = - self.baseView.height;
+    self.baseViewBottomConstraint.constant = - self.baseView.xl_height;
     [UIView animateWithDuration:0.25 animations:^{
         self.blackView.alpha = 0.0;
         [self layoutIfNeeded];
@@ -166,69 +167,20 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
 }
 #pragma mark    -   给外界使用的方法
 
-/**
- *  提供了几种常用的样式
- *
- *  @param type 样式
- */
-- (void)showBottomMultiPurposeViewWithType:(XLBottomMultiPurposeViewType)type
-{
-    
-}
-
-/**
- *  提供数据,展示视图
- *
- *  @param topImages        顶部图片数组
- *  @param topHighImages    顶部栏点击状态的图片数组
- *  @param topTexts         顶部栏文字数组
- *  @param bottomImages     底部栏的图片数组
- *  @param bottomHighImages 底部栏的点击状态图片数组
- *  @param bottomTexts      顶部栏的文字数组
- *  @param title            顶部的title
- *  @param delegate         代理
- */
-+ (void)showBottomMultiPurposeViewWithTopItemsImageArray:(NSArray *)topImages topHighImageArray:(NSArray *)topHighImages topItemsTextArray:(NSArray *)topTexts bottomItemsImageArray:(NSArray *)bottomImages bottomHighImageArray:(NSArray *)bottomHighImages bottomItemsTextArray:(NSArray *)bottomTexts  delegate:(id <XLBottomMultiPurposeViewDelegate>)delegate topTitleLabelText:(NSString *)title;
++ (void)showBottomMultiPurposeViewWithTopItems:(NSArray <XLBottomMultiPurposeViewItem *> *)topItems bottomItems:(NSArray <XLBottomMultiPurposeViewItem *> *)bottomItems delegate:(id <XLBottomMultiPurposeViewDelegate>)delegate topTitleLabelText:(NSString *)title
 {
     XLBottomMultiPurposeView *view = [self xl_viewFromXib];
-    view.delegate = delegate;
-    [view showBottomMultiPurposeViewWithTopItemsImageArray:topImages topHighImageArray:topHighImages topItemsTextArray:topTexts bottomItemsImageArray:bottomImages bottomHighImageArray:bottomHighImages bottomItemsTextArray:bottomTexts topTitleLabelText:title];
+    [view showBottomMultiPurposeViewWithTopItems:topItems bottomItems:bottomItems delegate:delegate topTitleLabelText:title];
 }
 
-/**
- *  提供数据,展示视图
- *
- *  @param topImages        顶部图片数组
- *  @param topHighImages    顶部栏点击状态的图片数组
- *  @param topTexts         顶部栏文字数组
- *  @param bottomImages     底部栏的图片数组
- *  @param bottomHighImages 底部栏的点击状态图片数组
- *  @param bottomTexts      顶部栏的文字数组
- *  @param title            顶部的title
- */
-- (void)showBottomMultiPurposeViewWithTopItemsImageArray:(NSArray *)topImages topHighImageArray:(NSArray *)topHighImages topItemsTextArray:(NSArray *)topTexts bottomItemsImageArray:(NSArray *)bottomImages bottomHighImageArray:(NSArray *)bottomHighImages bottomItemsTextArray:(NSArray *)bottomTexts topTitleLabelText:(NSString *)title
+- (void)showBottomMultiPurposeViewWithTopItems:(NSArray <XLBottomMultiPurposeViewItem *> *)topItems bottomItems:(NSArray <XLBottomMultiPurposeViewItem *> *)bottomItems delegate:(id <XLBottomMultiPurposeViewDelegate>)delegate topTitleLabelText:(NSString *)title
 {
-    [self.topDatas removeAllObjects];
-    [self.bottomDatas removeAllObjects];
-    if (topImages.count != topTexts.count) {
-        return ;
-    } else {
-        for (int i = 0; i < topImages.count; i ++) {
-            XLBottomMultiPurposeViewItem *item = [[XLBottomMultiPurposeViewItem alloc] initWithImage:topImages[i] highImage:topHighImages[i] title:topTexts[i]];
-            [self.topDatas addObject:item];
-        }
-    }
+    self.delegate = delegate;
     
-    if (bottomImages.count != bottomTexts.count) {
-        return ;
-    } else {
-        for (int i = 0; i < bottomImages.count; i ++) {
-            XLBottomMultiPurposeViewItem *item = [[XLBottomMultiPurposeViewItem alloc] initWithImage:bottomImages[i] highImage:bottomHighImages[i] title:bottomTexts[i]];
-            [self.bottomDatas addObject:item];
-        }
-    }
+    self.topItems = topItems;
+    self.bottomItems = bottomItems;
     
-    if (self.bottomDatas.count == 0) {
+    if (self.bottomItems.count == 0) {
         self.baseViewHeightConstraint.constant = 303 - 111;
         self.bottomView.hidden = YES;
         // 9.3.2 移除后,就不会包约束冲突的异常了
@@ -250,6 +202,8 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
     
     [self showBottomMutilPurposeView];
 }
+
+
 
 - (void)showBottomMutilPurposeView
 {
@@ -286,9 +240,9 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     if (collectionView == self.topCollectionView) {
-        return self.topDatas.count;
+        return self.topItems.count;
     } else if (collectionView == self.bottomCollectionView) {
-        return self.bottomDatas.count;
+        return self.bottomItems.count;
     }
     return 0;
 }
@@ -296,11 +250,11 @@ static NSString *const cellIDbottom = @"XLBottomMultiPurposeViewCollectionCellID
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (collectionView == self.topCollectionView) {
         XLBottomMultiPurposeViewCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellID forIndexPath:indexPath];
-        cell.item = self.topDatas[indexPath.row];
+        cell.item = self.topItems[indexPath.row];
         return cell;
     } else if (collectionView == self.bottomCollectionView) {
         XLBottomMultiPurposeViewCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIDbottom forIndexPath:indexPath];
-        cell.item = self.bottomDatas[indexPath.row];
+        cell.item = self.bottomItems[indexPath.row];
         return cell;
     }
     return nil;

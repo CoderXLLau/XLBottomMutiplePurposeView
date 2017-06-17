@@ -7,17 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "UIView+XLExtension.h"
-
-/**
- *  显示类型
- */
-typedef NS_ENUM(NSUInteger, XLBottomMultiPurposeViewType){
-    /**
-     *  弹出只有分享平台 的样式
-     */
-    XLBottomMultiPurposeViewTypeSingleShare = 1
-};
+#import "UIView+BMPExtension.h"
+#import "XLBottomMultiPurposeViewItem.h"
 
 @class XLBottomMultiPurposeView;
 
@@ -33,13 +24,6 @@ typedef NS_ENUM(NSUInteger, XLBottomMultiPurposeViewType){
 @interface XLBottomMultiPurposeView : UIView
 
 /**
- *  提供了几种常用的样式
- *
- *  @param type 样式
- */
-//- (void)showBottomMultiPurposeViewWithType:(XLBottomMultiPurposeViewType)type;
-
-/**
  *  提供数据,展示视图
  *
  *  @param topImages        顶部图片数组
@@ -51,6 +35,8 @@ typedef NS_ENUM(NSUInteger, XLBottomMultiPurposeViewType){
  *  @param title            顶部的title
  *  @param delegate         代理
  */
-+ (void)showBottomMultiPurposeViewWithTopItemsImageArray:(NSArray *)topImages topHighImageArray:(NSArray *)topHighImages topItemsTextArray:(NSArray *)topTexts bottomItemsImageArray:(NSArray *)bottomImages bottomHighImageArray:(NSArray *)bottomHighImages bottomItemsTextArray:(NSArray *)bottomTexts  delegate:(id <XLBottomMultiPurposeViewDelegate>)delegate topTitleLabelText:(NSString *)title;
+//+ (void)showBottomMultiPurposeViewWithTopItemsImageArray:(NSArray *)topImages topHighImageArray:(NSArray *)topHighImages topItemsTextArray:(NSArray *)topTexts bottomItemsImageArray:(NSArray *)bottomImages bottomHighImageArray:(NSArray *)bottomHighImages bottomItemsTextArray:(NSArray *)bottomTexts  delegate:(id <XLBottomMultiPurposeViewDelegate>)delegate topTitleLabelText:(NSString *)title;
+
++ (void)showBottomMultiPurposeViewWithTopItems:(NSArray <XLBottomMultiPurposeViewItem *> *)topItems bottomItems:(NSArray <XLBottomMultiPurposeViewItem *> *)bottomItems delegate:(id <XLBottomMultiPurposeViewDelegate>)delegate topTitleLabelText:(NSString *)title;
 
 @end

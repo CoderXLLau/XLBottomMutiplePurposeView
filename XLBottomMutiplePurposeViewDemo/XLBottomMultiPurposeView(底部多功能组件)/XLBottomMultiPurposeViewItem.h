@@ -19,8 +19,9 @@
  */
 @property (nonatomic , strong) NSString *highImage;
 
-- (instancetype)initWithDict:(NSDictionary *)dict;
++ (instancetype)itemWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title;
 - (instancetype)initWithImage:(NSString *)image highImage:(NSString *)highImage title:(NSString *)title;
 + (instancetype)itemWithDict:(NSDictionary *)dict;
+- (instancetype)initWithDict:(NSDictionary *)dict;
 
 @end

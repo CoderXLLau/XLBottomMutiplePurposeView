@@ -8,7 +8,7 @@
 
 #import "XLBottomMultiPurposeViewCollectionCell.h"
 #import "XLBottomMultiPurposeViewItem.h"
-#import "UIView+XLExtension.h"
+#import "UIView+BMPExtension.h"
 
 @interface XLBottomMultiPurposeViewCollectionCell ()
 

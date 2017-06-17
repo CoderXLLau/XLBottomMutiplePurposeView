@@ -34,7 +34,21 @@
     NSArray *bottomTexts = @[@"删除"];
     NSArray *bottomImages = @[@"details_icon_delete_nor"];
     NSArray *bottomHighImages = @[@"details_icon_delete_dow"];
-    [XLBottomMultiPurposeView showBottomMultiPurposeViewWithTopItemsImageArray:topImages topHighImageArray:topHighImages topItemsTextArray:topTexts bottomItemsImageArray:bottomImages bottomHighImageArray:bottomHighImages bottomItemsTextArray:bottomTexts delegate:self topTitleLabelText:@"分享到" ];
+    
+    // 构建数据源
+    NSMutableArray *topItems = [NSMutableArray arrayWithCapacity:topTexts.count] ;
+    NSMutableArray *bottomItems = [NSMutableArray arrayWithCapacity:bottomTexts.count];
+    for (int i = 0 ; i < topTexts.count; i ++) {
+        XLBottomMultiPurposeViewItem *item = [XLBottomMultiPurposeViewItem itemWithImage:topImages[i] highImage:topHighImages[i] title:topTexts[i]];
+        [topItems addObject:item];
+    }
+    for ( int i = 0 ; i < bottomTexts.count; i++) {
+        XLBottomMultiPurposeViewItem *item = [XLBottomMultiPurposeViewItem itemWithImage:bottomImages[i] highImage:bottomHighImages[i] title:bottomTexts[i]];
+        [bottomItems addObject:item];
+
+    }
+    // 展示组件
+    [XLBottomMultiPurposeView showBottomMultiPurposeViewWithTopItems:topItems bottomItems:bottomItems delegate:self topTitleLabelText:@"分享到"];
 }
 
 #pragma mark    -   XLBottomMultiPurposeViewDelegate
