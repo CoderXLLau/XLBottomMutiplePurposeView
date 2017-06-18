@@ -1,11 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = 'XLBottomMultiPurposeView'
-    s.version      = '1.0.0'
-    s.description = <<-DESC
-
-                   一个类似微博底部分享组件的小框架
-
-                   DESC
+    s.version      = '1.0.1'
     s.summary      = 'A simple module like SinaWeibo bottom share view!'
     s.homepage     = 'https://github.com/CoderXLLau/XLBottomMutiplePurposeView'
     s.license      = 'MIT'
