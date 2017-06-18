@@ -187,9 +187,11 @@
     return !self.isHidden && self.alpha > 0.01 && self.window == keyWindow && intersects;
 }
 
+
+#define XLBMPBundle [NSBundle bundleForClass:[self class]]
 + (instancetype)xl_viewFromXib
 {
-    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
+    return [[[NSBundle bundleForClass:[self class]] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
 
 @end
